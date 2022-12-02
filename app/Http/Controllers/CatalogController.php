@@ -12,7 +12,8 @@ class CatalogController extends Controller {
     public function index() {
         $roots = Category::where('parent_id', 0)->get();
         $brands = Brand::popular();
-        return ("Gjitk yf[eq");
+        print("df");
+        return view('catalog.index', compact('roots', 'brands'));
     }
 
     public function category(Category $category, ProductFilter $filters) {
